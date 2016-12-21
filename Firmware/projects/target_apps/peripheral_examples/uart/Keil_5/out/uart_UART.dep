@@ -1,0 +1,104 @@
+Dependencies for Project 'uart', Target 'UART': (DO NOT MODIFY !)
+F (..\..\shared\startup\boot_vectors.s)(0x5798846E)(--cpu Cortex-M0 --li -g --apcs=interwork --pd "__MICROLIB SETA 1"-I "E:\Embedded\BLE_LED\03_Ref\SDK\SDK 5.0.4\DA1458x_SDK_5.0.4\projects\target_apps\peripheral_examples\uart\Keil_5\RTE"-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\Device\ARM\ARMCM0\Include-I D:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 518" --pd "ARMCM0 SETA 1"--list .\out\boot_vectors.lst --xref -o .\out\boot_vectors.o --depend .\out\boot_vectors.d)
+F (..\..\shared\startup\system_ARMCM0.c)(0x5798846E)(--c99 -c --cpu Cortex-M0 -D__MICROLIB --li -g -O0 --apcs=interwork -I ..\include -I ..\..\..\..\..\sdk\platform\arch -I ..\..\..\..\..\sdk\platform\arch\compiler\rvds -I ..\..\..\..\..\sdk\platform\arch\ll\rvds -I ..\..\..\..\..\sdk\platform\driver\reg -I ..\..\..\..\..\sdk\platform\include -I ..\..\..\..\..\sdk\platform\driver\gpio -I ..\..\..\..\..\sdk\app_modules\api -I ..\..\..\..\..\sdk\ble_stack\rwble_hl\rwble_hl -I ..\..\shared\common_uart -I ..\..\..\..\..\sdk\platform\driver\uart --thumb -c-I "E:\Embedded\BLE_LED\03_Ref\SDK\SDK 5.0.4\DA1458x_SDK_5.0.4\projects\target_apps\peripheral_examples\uart\Keil_5\RTE"-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\Device\ARM\ARMCM0\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DARMCM0-o .\out\system_armcm0.o --omf_browse .\out\system_armcm0.crf --depend .\out\system_armcm0.d)
+I (..\..\..\..\..\sdk\platform\include\ARMCM0.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\global_io.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\datasheet.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\core_cm0.h)(0x57988474)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (..\..\..\..\..\sdk\platform\include\core_cmInstr.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\core_cmFunc.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\system_ARMCM0.h)(0x57988474)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x569DEA3A)
+F (..\..\shared\startup\per_ex_hard_fault.c)(0x5798846E)(--c99 -c --cpu Cortex-M0 -D__MICROLIB --li -g -O0 --apcs=interwork -I ..\include -I ..\..\..\..\..\sdk\platform\arch -I ..\..\..\..\..\sdk\platform\arch\compiler\rvds -I ..\..\..\..\..\sdk\platform\arch\ll\rvds -I ..\..\..\..\..\sdk\platform\driver\reg -I ..\..\..\..\..\sdk\platform\include -I ..\..\..\..\..\sdk\platform\driver\gpio -I ..\..\..\..\..\sdk\app_modules\api -I ..\..\..\..\..\sdk\ble_stack\rwble_hl\rwble_hl -I ..\..\shared\common_uart -I ..\..\..\..\..\sdk\platform\driver\uart --thumb -c-I "E:\Embedded\BLE_LED\03_Ref\SDK\SDK 5.0.4\DA1458x_SDK_5.0.4\projects\target_apps\peripheral_examples\uart\Keil_5\RTE"-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\Device\ARM\ARMCM0\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DARMCM0-o .\out\per_ex_hard_fault.o --omf_browse .\out\per_ex_hard_fault.crf --depend .\out\per_ex_hard_fault.d)
+F (..\..\..\..\..\sdk\platform\driver\gpio\gpio.c)(0x57988474)(--c99 -c --cpu Cortex-M0 -D__MICROLIB --li -g -O0 --apcs=interwork -I ..\include -I ..\..\..\..\..\sdk\platform\arch -I ..\..\..\..\..\sdk\platform\arch\compiler\rvds -I ..\..\..\..\..\sdk\platform\arch\ll\rvds -I ..\..\..\..\..\sdk\platform\driver\reg -I ..\..\..\..\..\sdk\platform\include -I ..\..\..\..\..\sdk\platform\driver\gpio -I ..\..\..\..\..\sdk\app_modules\api -I ..\..\..\..\..\sdk\ble_stack\rwble_hl\rwble_hl -I ..\..\shared\common_uart -I ..\..\..\..\..\sdk\platform\driver\uart --thumb -c-I "E:\Embedded\BLE_LED\03_Ref\SDK\SDK 5.0.4\DA1458x_SDK_5.0.4\projects\target_apps\peripheral_examples\uart\Keil_5\RTE"-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\Device\ARM\ARMCM0\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DARMCM0-o .\out\gpio.o --omf_browse .\out\gpio.crf --depend .\out\gpio.d)
+I (..\..\..\..\..\sdk\platform\arch\arch.h)(0x57988472)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (..\..\..\..\..\sdk\platform\arch\compiler\rvds\compiler.h)(0x57988472)
+I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569DEA3A)
+I (..\..\..\..\..\sdk\platform\arch\ll\rvds\ll.h)(0x57988472)
+I (..\..\..\..\..\sdk\platform\include\reg_intc.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\_reg_intc.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\driver\reg\reg_access.h)(0x57988474)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x569DEA3A)
+I (..\..\..\..\..\sdk\platform\include\ARMCM0.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\global_io.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\datasheet.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\core_cm0.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\core_cmInstr.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\core_cmFunc.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\system_ARMCM0.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\driver\gpio\gpio.h)(0x57988474)
+I (..\include\user_periph_setup.h)(0x5798846E)
+F (..\..\..\..\..\sdk\platform\driver\uart\uart2.c)(0x57988474)(--c99 -c --cpu Cortex-M0 -D__MICROLIB --li -g -O0 --apcs=interwork -I ..\include -I ..\..\..\..\..\sdk\platform\arch -I ..\..\..\..\..\sdk\platform\arch\compiler\rvds -I ..\..\..\..\..\sdk\platform\arch\ll\rvds -I ..\..\..\..\..\sdk\platform\driver\reg -I ..\..\..\..\..\sdk\platform\include -I ..\..\..\..\..\sdk\platform\driver\gpio -I ..\..\..\..\..\sdk\app_modules\api -I ..\..\..\..\..\sdk\ble_stack\rwble_hl\rwble_hl -I ..\..\shared\common_uart -I ..\..\..\..\..\sdk\platform\driver\uart --thumb -c-I "E:\Embedded\BLE_LED\03_Ref\SDK\SDK 5.0.4\DA1458x_SDK_5.0.4\projects\target_apps\peripheral_examples\uart\Keil_5\RTE"-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\Device\ARM\ARMCM0\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DARMCM0-o .\out\uart2.o --omf_browse .\out\uart2.crf --depend .\out\uart2.d)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x569DEA3A)
+I (..\..\..\..\..\sdk\platform\driver\uart\uart.h)(0x57988474)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569DEA3A)
+I (..\..\..\..\..\sdk\platform\driver\uart\reg_uart.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\_reg_uart.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\arch\compiler\rvds\compiler.h)(0x57988472)
+I (..\..\..\..\..\sdk\platform\arch\arch.h)(0x57988472)
+I (..\..\..\..\..\sdk\platform\arch\ll\rvds\ll.h)(0x57988472)
+I (..\..\..\..\..\sdk\platform\include\reg_intc.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\_reg_intc.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\driver\reg\reg_access.h)(0x57988474)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x569DEA3A)
+I (..\..\..\..\..\sdk\platform\include\ARMCM0.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\global_io.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\datasheet.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\core_cm0.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\core_cmInstr.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\core_cmFunc.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\system_ARMCM0.h)(0x57988474)
+F (..\..\shared\common_uart\common_uart.c)(0x5798846E)(--c99 -c --cpu Cortex-M0 -D__MICROLIB --li -g -O0 --apcs=interwork -I ..\include -I ..\..\..\..\..\sdk\platform\arch -I ..\..\..\..\..\sdk\platform\arch\compiler\rvds -I ..\..\..\..\..\sdk\platform\arch\ll\rvds -I ..\..\..\..\..\sdk\platform\driver\reg -I ..\..\..\..\..\sdk\platform\include -I ..\..\..\..\..\sdk\platform\driver\gpio -I ..\..\..\..\..\sdk\app_modules\api -I ..\..\..\..\..\sdk\ble_stack\rwble_hl\rwble_hl -I ..\..\shared\common_uart -I ..\..\..\..\..\sdk\platform\driver\uart --thumb -c-I "E:\Embedded\BLE_LED\03_Ref\SDK\SDK 5.0.4\DA1458x_SDK_5.0.4\projects\target_apps\peripheral_examples\uart\Keil_5\RTE"-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\Device\ARM\ARMCM0\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DARMCM0-o .\out\common_uart.o --omf_browse .\out\common_uart.crf --depend .\out\common_uart.d)
+I (..\..\..\..\..\sdk\platform\include\global_io.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\datasheet.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\driver\gpio\gpio.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\arch\arch.h)(0x57988472)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (..\..\..\..\..\sdk\platform\arch\compiler\rvds\compiler.h)(0x57988472)
+I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569DEA3A)
+I (..\..\..\..\..\sdk\platform\arch\ll\rvds\ll.h)(0x57988472)
+I (..\..\..\..\..\sdk\platform\include\reg_intc.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\_reg_intc.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\driver\reg\reg_access.h)(0x57988474)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x569DEA3A)
+I (..\..\..\..\..\sdk\platform\include\ARMCM0.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\core_cm0.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\core_cmInstr.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\core_cmFunc.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\system_ARMCM0.h)(0x57988474)
+I (..\..\shared\common_uart\common_uart.h)(0x5798846E)
+I (..\..\..\..\..\sdk\platform\driver\uart\uart.h)(0x57988474)
+I (..\include\user_periph_setup.h)(0x5798846E)
+F (..\src\main.c)(0x5798846E)(--c99 -c --cpu Cortex-M0 -D__MICROLIB --li -g -O0 --apcs=interwork -I ..\include -I ..\..\..\..\..\sdk\platform\arch -I ..\..\..\..\..\sdk\platform\arch\compiler\rvds -I ..\..\..\..\..\sdk\platform\arch\ll\rvds -I ..\..\..\..\..\sdk\platform\driver\reg -I ..\..\..\..\..\sdk\platform\include -I ..\..\..\..\..\sdk\platform\driver\gpio -I ..\..\..\..\..\sdk\app_modules\api -I ..\..\..\..\..\sdk\ble_stack\rwble_hl\rwble_hl -I ..\..\shared\common_uart -I ..\..\..\..\..\sdk\platform\driver\uart --thumb -c-I "E:\Embedded\BLE_LED\03_Ref\SDK\SDK 5.0.4\DA1458x_SDK_5.0.4\projects\target_apps\peripheral_examples\uart\Keil_5\RTE"-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\Device\ARM\ARMCM0\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DARMCM0-o .\out\main.o --omf_browse .\out\main.crf --depend .\out\main.d)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569DEA3A)
+I (..\..\..\..\..\sdk\platform\include\global_io.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\datasheet.h)(0x57988474)
+I (..\..\shared\common_uart\common_uart.h)(0x5798846E)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (..\..\..\..\..\sdk\platform\driver\uart\uart.h)(0x57988474)
+I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569DEA3A)
+I (..\include\user_periph_setup.h)(0x5798846E)
+F (..\src\user_periph_setup.c)(0x5798846E)(--c99 -c --cpu Cortex-M0 -D__MICROLIB --li -g -O0 --apcs=interwork -I ..\include -I ..\..\..\..\..\sdk\platform\arch -I ..\..\..\..\..\sdk\platform\arch\compiler\rvds -I ..\..\..\..\..\sdk\platform\arch\ll\rvds -I ..\..\..\..\..\sdk\platform\driver\reg -I ..\..\..\..\..\sdk\platform\include -I ..\..\..\..\..\sdk\platform\driver\gpio -I ..\..\..\..\..\sdk\app_modules\api -I ..\..\..\..\..\sdk\ble_stack\rwble_hl\rwble_hl -I ..\..\shared\common_uart -I ..\..\..\..\..\sdk\platform\driver\uart --thumb -c-I "E:\Embedded\BLE_LED\03_Ref\SDK\SDK 5.0.4\DA1458x_SDK_5.0.4\projects\target_apps\peripheral_examples\uart\Keil_5\RTE"-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\Device\ARM\ARMCM0\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DARMCM0-o .\out\user_periph_setup.o --omf_browse .\out\user_periph_setup.crf --depend .\out\user_periph_setup.d)
+I (..\..\..\..\..\sdk\platform\include\global_io.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\datasheet.h)(0x57988474)
+I (..\..\shared\common_uart\common_uart.h)(0x5798846E)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (..\..\..\..\..\sdk\platform\driver\uart\uart.h)(0x57988474)
+I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569DEA3A)
+I (..\include\user_periph_setup.h)(0x5798846E)
+I (..\..\..\..\..\sdk\platform\driver\gpio\gpio.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\arch\arch.h)(0x57988472)
+I (..\..\..\..\..\sdk\platform\arch\compiler\rvds\compiler.h)(0x57988472)
+I (..\..\..\..\..\sdk\platform\arch\ll\rvds\ll.h)(0x57988472)
+I (..\..\..\..\..\sdk\platform\include\reg_intc.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\_reg_intc.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\driver\reg\reg_access.h)(0x57988474)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x569DEA3A)
+I (..\..\..\..\..\sdk\platform\include\ARMCM0.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\core_cm0.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\core_cmInstr.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\core_cmFunc.h)(0x57988474)
+I (..\..\..\..\..\sdk\platform\include\system_ARMCM0.h)(0x57988474)

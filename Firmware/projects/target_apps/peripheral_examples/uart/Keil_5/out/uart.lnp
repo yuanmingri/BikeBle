@@ -1,0 +1,13 @@
+--cpu Cortex-M0
+".\out\boot_vectors.o"
+".\out\system_armcm0.o"
+".\out\per_ex_hard_fault.o"
+".\out\gpio.o"
+".\out\uart2.o"
+".\out\common_uart.o"
+".\out\main.o"
+".\out\user_periph_setup.o"
+--library_type=microlib --strict --scatter "..\..\shared\peripheral_examples.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Out\uart.map" -o .\out\uart.axf

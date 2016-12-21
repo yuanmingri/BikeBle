@@ -1,0 +1,11 @@
+.\out\system_armcm0.o: ..\..\shared\startup\system_ARMCM0.c
+.\out\system_armcm0.o: ..\..\..\..\..\sdk\platform\include\ARMCM0.h
+.\out\system_armcm0.o: ..\..\..\..\..\sdk\platform\include\global_io.h
+.\out\system_armcm0.o: ..\..\..\..\..\sdk\platform\include\datasheet.h
+.\out\system_armcm0.o: ..\..\..\..\..\sdk\platform\include\global_io.h
+.\out\system_armcm0.o: ..\..\..\..\..\sdk\platform\include\core_cm0.h
+.\out\system_armcm0.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\out\system_armcm0.o: ..\..\..\..\..\sdk\platform\include\core_cmInstr.h
+.\out\system_armcm0.o: ..\..\..\..\..\sdk\platform\include\core_cmFunc.h
+.\out\system_armcm0.o: ..\..\..\..\..\sdk\platform\include\system_ARMCM0.h
+.\out\system_armcm0.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

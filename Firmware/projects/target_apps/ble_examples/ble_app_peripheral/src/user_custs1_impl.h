@@ -71,8 +71,10 @@ enum
 #define LED4_PIN	GPIO_PIN_0
 
 typedef struct {
+		bool led_on;
 		bool led_state;
 		bool connected;
+		uint16_t delay;
 }app_state_t;
 
 extern app_state_t gstate;

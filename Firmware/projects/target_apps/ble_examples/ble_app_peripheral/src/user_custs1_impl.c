@@ -48,12 +48,12 @@ void user_custs1_led_wr_ind_handler(ke_msg_id_t const msgid,
                                      ke_task_id_t const src_id)
 {
     uint8_t val = 0;
-    memcpy(&val, &param->value[0], param->length);
+    memcpy(&val, &param->value[0], 1);
 
     if (val == CUSTS1_LED_ON)
-        gstate.led_state = true;
+        gstate.led_on = true;
     else if (val == CUSTS1_LED_OFF)
-        gstate.led_state = false;
+        gstate.led_on = false;
 		set_led_state();
 }
 
@@ -62,49 +62,66 @@ void user_custs1_control_wr_ind_handler(ke_msg_id_t const msgid,
                                      ke_task_id_t const dest_id,
                                      ke_task_id_t const src_id)
 {
-	
+		memcpy(&gstate.delay, &param->value[0], 2);
+		if(gstate.delay == 0)
+			gstate.led_state = true;
 }
 
 void set_led_state(void)
 {
 	int i;
-	for(i = 0; i < 4; i++)
+	bool state = false;
+	if(gstate.led_on)
 	{
-		GPIO_ConfigurePin(LED_GPIO_PORTS[i],LED_GPIO_PINS[i],OUTPUT,PID_GPIO,gstate.led_state);
+		if(gstate.delay == 0)
+			state = true;
+		else
+			state = gstate.led_state;
 	}
+	for(i = 0; i < 4; i++)
+		GPIO_ConfigurePin(LED_GPIO_PORTS[i],LED_GPIO_PINS[i],OUTPUT,PID_GPIO,state);
 }
 
 void user_led_timer_handler(void)
 {
-#if 0
 		if(!gstate.connected)
 		{
 				app_easy_timer_cancel( led_tmr_hndl);
 		}
 		else
 		{
-				led_tmr_hndl = app_easy_timer( gstate.led_delay, user_led_timer_handler );  
+				if(gstate.delay > 0)
+					led_tmr_hndl = app_easy_timer( gstate.delay, user_led_timer_handler );  
+				else
+					led_tmr_hndl = app_easy_timer( 10, user_led_timer_handler );  
 		}
-#endif
+		gstate.led_state = !gstate.led_state;
+		set_led_state();
 }   
 
 void user_cust1_on_connect_handler(void)
 {
 	gstate.connected = true;
+	gstate.led_state = false;
 	arch_puts("connected\r\n");
-	//led_tmr_hndl = app_easy_timer( gstate.led_delay, user_led_timer_handler );
+	if(gstate.delay > 0)
+		led_tmr_hndl = app_easy_timer( gstate.delay, user_led_timer_handler );
+	else
+		led_tmr_hndl = app_easy_timer( 10, user_led_timer_handler );
 }
 
 void user_cust1_on_disconnect_handler(void)
 {
 	gstate.connected = false;
-	gstate.led_state = false;
+	gstate.led_on = false;
 	set_led_state();
 }
 
 void user_cust1_init(void)
 {
+		gstate.led_on = false;
 		gstate.led_state = false;
+		gstate.delay = 100;
 		set_led_state();
 	
 #ifdef USE_SPI_FLASH_FOR_CONFIG

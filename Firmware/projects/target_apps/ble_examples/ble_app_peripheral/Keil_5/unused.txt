@@ -1,4 +1,4 @@
-;#<FEEDBACK># ARM Linker, 5060061: Last Updated: Wed Dec 21 00:16:01 2016
+;#<FEEDBACK># ARM Linker, 5060061: Last Updated: Thu Dec 22 21:45:42 2016
 ;VERSION 0.2
 ;FILE adc.o
 adc_disable <= USED 0
@@ -175,7 +175,6 @@ uart2_flow_off <= USED 0
 uart2_flow_on <= USED 0
 uart2_read <= USED 0
 ;FILE user_custs1_impl.o
-user_led_timer_handler <= USED 0
 ;FILE user_periph_setup.o
 ;FILE user_peripheral.o
 ;FILE wkupct_quadec.o

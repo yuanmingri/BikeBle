@@ -25,7 +25,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -39,6 +41,9 @@ public class MasterActivity extends AppCompatActivity {
     BluetoothDevice[] mDevices = new BluetoothDevice[2];
     private ToggleButton[] mToggleButtons = new ToggleButton[2];
     private TextView mTextView;
+
+    private EditText mIntervalEdit;
+    private Button mButtonApply;
 
     public static String LED1_ON = "LED1 ON";
     public static String LED1_OFF = "LED1 OFF";
@@ -59,6 +64,7 @@ public class MasterActivity extends AppCompatActivity {
 
     private static final UUID Custom_Service_UUID = UUID.fromString("edfec62e-9910-0bac-5241-d8bda6932a2f");
     private static final UUID Led_State_UUID = UUID.fromString("5a87b4ef-3bfa-76a8-e642-92933c31434f");
+    private static final UUID Control_Point_UUID = UUID.fromString("2d86686a-53dc-25b3-0c4a-f0e10c8dee20");
 
     private boolean mScanning = false;
 
@@ -105,6 +111,20 @@ public class MasterActivity extends AppCompatActivity {
         mToggleButtons[0].setEnabled(false);
         mToggleButtons[1].setEnabled(false);
 
+
+        mIntervalEdit = (EditText)findViewById(R.id.editBlinkInterval);
+        mButtonApply = (Button)findViewById(R.id.buttonApply);
+
+        mIntervalEdit.setEnabled(false);
+        mButtonApply.setEnabled(false);
+
+        mButtonApply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                writeControlValue();
+            }
+        });
+
         mToggleButtons[0].setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -119,10 +139,17 @@ public class MasterActivity extends AppCompatActivity {
             }
         });
 
+
         final BluetoothManager bluetoothManager =
                 (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
         mBluetoothAdapter = bluetoothManager.getAdapter();
 
+        if(!mBluetoothAdapter.isEnabled())
+        {
+            Intent intentBtEnabled = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            int REQUEST_ENABLE_BT = 2;
+            startActivityForResult(intentBtEnabled, REQUEST_ENABLE_BT);
+        }
         if (mBluetoothAdapter == null) {
             Toast.makeText(this, R.string.error_bluetooth_not_supported, Toast.LENGTH_SHORT).show();
             finish();
@@ -297,6 +324,12 @@ public class MasterActivity extends AppCompatActivity {
                 mGatts[index] = null;
                 mToggleButtons[index].setEnabled(false);
                 scanLeDevice(true);
+
+                if(!mToggleButtons[0].isEnabled() && !mToggleButtons[1].isEnabled())
+                {
+                    mIntervalEdit.setEnabled(false);
+                    mButtonApply.setEnabled(false);
+                }
             }
             else if(ACTION_BATTERY_READ.equals(action)) {
 
@@ -305,6 +338,8 @@ public class MasterActivity extends AppCompatActivity {
             {
                 int index = intent.getIntExtra("index",0);
                 mToggleButtons[index].setEnabled(true);
+                mIntervalEdit.setEnabled(true);
+                mButtonApply.setEnabled(true);
                 if(mToggleButtons[0].isEnabled() && mToggleButtons[1].isEnabled())
                     mTextView.setText("Scan finished");
             }
@@ -348,5 +383,47 @@ public class MasterActivity extends AppCompatActivity {
         mLedState.setValue(val);
         mGatts[index].writeCharacteristic(mLedState);
     }
+
+    public void writeControlValue()
+    {
+        int index;
+        BluetoothGattService mCustomSrvice;
+        BluetoothGattCharacteristic mControlPoint;
+
+        for(index = 0; index < 2; index++)
+        {
+            if(mGatts[index] == null)
+                continue;
+
+            mCustomSrvice = mGatts[index].getService(Custom_Service_UUID);
+            if(mCustomSrvice == null) {
+                Log.d(TAG, "Custom service not found!");
+                return;
+            }
+
+            mControlPoint = mCustomSrvice.getCharacteristic(Control_Point_UUID);
+            if(mControlPoint == null) {
+                Log.d(TAG, "Battery level not found!");
+                return;
+            }
+            Log.d(TAG, "write initiated");
+
+            String s = mIntervalEdit.getText().toString();
+            int n = Integer.parseInt(s);
+            if(n >= 10000) {
+                n = 10000;
+                s = String.valueOf(n);
+                mIntervalEdit.setText(s);
+            }
+            n = n / 10;
+            byte[] val = new byte[2];
+            val[0] = (byte)(n & 0xff);
+            val[1] = (byte)( (n >> 8) & 0xff);
+            mControlPoint.setValue(val);
+            mGatts[index].writeCharacteristic(mControlPoint);
+        }
+
+    }
+
 
 }
